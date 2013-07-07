@@ -1,0 +1,17 @@
+<h1>Sessions#new</h1>
+<p>Find me in app/views/sessions/new.html.erb</p>
+ <h1>Log in</h1>
+    <p><%= flash[:notice] %></p>
+    <%= form_for :session, url: sessions_path do |f| %>
+        <div class="field">
+          <%= f.label :empid %>
+          <%= f.text_field :empid %>
+        </div>
+        <div class="field">
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+        </div>
+        <div class="actions"><%= f.submit :login %></div>
+          <%= link_to "Not registered?  Sign up!", new_authentication_path %>
+
+    <% end %>
